@@ -9,15 +9,14 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author gabri
- */
 public class Producer extends Thread {
-    Buffer buffer;
+    
+    private Buffer buffer;
+    private int timeInMillis;
     
     Producer( Buffer buffer ) {
         this.buffer = buffer;
+        this.timeInMillis = 1000;
     }
     
     @Override
@@ -33,10 +32,14 @@ public class Producer extends Thread {
            System.out.println("Producer produced: " + product);
            
            try {
-               Thread.sleep(1000);
+               Thread.sleep(this.timeInMillis);
            } catch(InterruptedException e) {
                 Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, e);
            }
        }
-    }  
+    }
+    
+    public void setTime(int timeInMillis) {
+       this.timeInMillis = timeInMillis;
+    }
 }
