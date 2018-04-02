@@ -1,5 +1,9 @@
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.LayoutManager;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,22 +37,23 @@ public class ProducerConsumer {
         panel = new JPanel();  
         btProduce = new JButton("Producer"); 
         btConsume = new JButton("Consumer");
-        produceLabel = new JLabel();
-        consumeLabel = new JLabel();
+        produceLabel = new JLabel("Producers");
+        consumeLabel = new JLabel("Consumers");
     }
     
     public void setComponentsFeatures() {
-        panel.setBounds(0,0,500,500);    
+        panel.setBounds(0,0,500,500);
         panel.setBackground(Color.gray); 
         btProduce.setBounds(50,100,80,30);   
         btProduce.setBackground(Color.blue); 
-        produceLabel.setBounds(50, 150, 50, 50);
+        produceLabel.setBounds(300, 100, 50, 50);
         btConsume.setBounds(100,100,80,30);  
-        consumeLabel.setBounds(100, 150, 50 , 50);
+        consumeLabel.setBounds(300, 100, 50 , 50);
         btConsume.setBackground(Color.green);
     }
     
     public void addComponents(){
+        this.panel.setLayout(null);
         this.panel.add(btProduce); 
         this.panel.add(btConsume); 
         this.panel.add(produceLabel);
@@ -58,19 +63,21 @@ public class ProducerConsumer {
     
     public void setFrameFeatures() {
         frame.setSize(500,500);    
-        frame.setLayout(null);    
+        frame.setLayout(null);
         frame.setVisible(true);
+        frame.setResizable(false);
     }  
     
     public static void main(String[] args) {
-        Buffer buffer = new Buffer();
         
         ProducerConsumer produceConsumer = new ProducerConsumer();
+   //     Buffer buffer = new Buffer();
         
-        Producer producer = new Producer(buffer);
-        producer.start();
-        
-        Consumer consumer = new Consumer(buffer);
-        consumer.start();
+//        
+//        Producer producer = new Producer(buffer);
+//        producer.start();
+//        
+//        Consumer consumer = new Consumer(buffer);
+//        consumer.start();
     }
 }
