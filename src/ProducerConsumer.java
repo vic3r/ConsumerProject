@@ -23,6 +23,8 @@ public class ProducerConsumer {
     private JButton btConsume;
     private JLabel produceLabel;
     private JLabel consumeLabel;
+    private JLabel bufferSize;
+    private JLabel rangeBufferSize;
     
     public ProducerConsumer() {
         createComponents();
@@ -39,6 +41,8 @@ public class ProducerConsumer {
         btConsume = new JButton("Consumer");
         produceLabel = new JLabel("Producers");
         consumeLabel = new JLabel("Consumers");
+        bufferSize = new JLabel("Buffer size");
+        rangeBufferSize = new JLabel("Range buffer size");
     }
     
     public void setComponentsFeatures() {
@@ -46,9 +50,9 @@ public class ProducerConsumer {
         panel.setBackground(Color.gray); 
         btProduce.setBounds(50,100,80,30);   
         btProduce.setBackground(Color.blue); 
-        produceLabel.setBounds(300, 100, 50, 50);
+        produceLabel.setBounds(20, 100, 100, 50);
         btConsume.setBounds(100,100,80,30);  
-        consumeLabel.setBounds(300, 100, 50 , 50);
+        consumeLabel.setBounds(20, 150, 100 , 50);
         btConsume.setBackground(Color.green);
     }
     
