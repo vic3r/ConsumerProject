@@ -85,6 +85,12 @@ public final class ProducerConsumer {
         this.panel.add(btConsume); 
         this.panel.add(produceLabel);
         this.panel.add(consumeLabel);
+        this.panel.add(bufferSize);
+        this.panel.add(rangeBufferSize);
+        this.panel.add(InputBufferSize);
+        this.panel.add(InputWaitingTime);
+        this.panel.add(startProducerConsumer);
+        
         this.frame.add(panel);
     }
     
