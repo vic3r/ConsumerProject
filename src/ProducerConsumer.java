@@ -17,6 +17,7 @@ import javax.swing.JTextField;
  */
 
 public final class ProducerConsumer {
+
     
     private JFrame frame;
     private JPanel panel;
@@ -62,6 +63,7 @@ public final class ProducerConsumer {
         inputBufferSize = new JTextField();
         inputWaitingTimeProducers = new JTextField();
         inputWaitingTimeConsumers = new JTextField();
+
     }
     
     public void setComponentsFeatures() {
