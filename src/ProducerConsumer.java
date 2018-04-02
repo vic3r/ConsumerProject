@@ -35,8 +35,9 @@ public final class ProducerConsumer {
     private JLabel bufferQuantity;
  
     //JTextFields
-    private JTextField InputBufferSize;
-    private JTextField InputWaitingTime;
+    private JTextField inputBufferSize;
+    private JTextField inputWaitingTimeProducers;
+    private JTextField inputWaitingTimeConsumers;
     
     public ProducerConsumer() {
         createComponents();
@@ -58,8 +59,8 @@ public final class ProducerConsumer {
         rangeBufferSize = new JLabel("Range buffer size");
         bufferQuantity = new JLabel("Quantity");
         waitingTime = new JLabel("Waiting Time");
-        InputBufferSize = new JTextField();
-        InputWaitingTime = new JTextField();
+        inputBufferSize = new JTextField();
+        inputWaitingTimeProducers = new JTextField();
     }
     
     public void setComponentsFeatures() {
@@ -72,10 +73,10 @@ public final class ProducerConsumer {
         consumeLabel.setBounds(20, 150, 100 , 50);
         btConsume.setBackground(Color.green);
         bufferSize.setBounds(20, 200, 100, 50);
-        rangeBufferSize.setBounds(20, 250, 100, 50);
-        InputBufferSize.setBounds(120, 200, 100, 50);
-        InputWaitingTime.setBounds(150, 100, 100, 50);
-        startProducerConsumer.setBounds(100, 300, 100, 200);
+        rangeBufferSize.setBounds(20, 250, 120, 50);
+        inputBufferSize.setBounds(120, 220, 50, 30);
+        inputWaitingTimeProducers.setBounds(200, 120, 50, 30);
+        startProducerConsumer.setBounds(100, 300, 100, 130);
         
     }
     
@@ -87,8 +88,8 @@ public final class ProducerConsumer {
         this.panel.add(consumeLabel);
         this.panel.add(bufferSize);
         this.panel.add(rangeBufferSize);
-        this.panel.add(InputBufferSize);
-        this.panel.add(InputWaitingTime);
+        this.panel.add(inputBufferSize);
+        this.panel.add(inputWaitingTimeProducers);
         this.panel.add(startProducerConsumer);
         
         this.frame.add(panel);
