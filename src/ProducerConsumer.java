@@ -73,7 +73,7 @@ public final class ProducerConsumer {
         btProduce.setBackground(Color.blue); 
         btConsume.setBounds(150,50,120,30);  
         btConsume.setBackground(Color.green);
-        
+      
         produceLabel.setBounds(20, 100, 100, 50);
         consumeLabel.setBounds(20, 150, 100 , 50);
         bufferSize.setBounds(20, 200, 100, 50);
