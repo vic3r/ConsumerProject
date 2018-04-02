@@ -11,9 +11,6 @@ import javax.swing.JPanel;
  * and open the template in the editor.
  */
 
-/**
- *
- */
 public class ProducerConsumer {
     
     private JFrame frame;
@@ -34,8 +31,8 @@ public class ProducerConsumer {
     public void createComponents() {
         frame = new JFrame("Producer Consumer");    
         panel = new JPanel();  
-        btProduce = new JButton("Produce"); 
-        btConsume = new JButton("Consume");
+        btProduce = new JButton("Producer"); 
+        btConsume = new JButton("Consumer");
         produceLabel = new JLabel();
         consumeLabel = new JLabel();
     }
@@ -54,6 +51,8 @@ public class ProducerConsumer {
     public void addComponents(){
         this.panel.add(btProduce); 
         this.panel.add(btConsume); 
+        this.panel.add(produceLabel);
+        this.panel.add(consumeLabel);
         this.frame.add(panel);
     }
     

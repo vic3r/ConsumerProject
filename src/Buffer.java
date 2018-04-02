@@ -33,6 +33,7 @@ import java.util.logging.Logger;
     }
     
     synchronized void produce(char product) {
+
         if(!this.bufferStorage.isEmpty()){
                try {
                 wait(1000);
