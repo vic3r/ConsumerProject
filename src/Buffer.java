@@ -1,4 +1,6 @@
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,37 +10,31 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author gabri
- */
-public class Buffer {
-    private char buffer;
+ public class Buffer {
+    
+    private Queue<Character> bufferStorage;
     
     Buffer() {
-        this.buffer = 0;
+        this.bufferStorage = new LinkedList<Character>();
     }
     
     synchronized char consume() {
-        char product = 0;
-        
-        if (product == 0) {
+         if(this.bufferStorage.isEmpty()) {
             try {
                 wait(1000);
             } catch(InterruptedException e) {
                 Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-        
-        product = this.buffer;
-        this.buffer = 0;
-        notify();
+        char product = this.bufferStorage.poll();
+        notifyAll();
         
         return product;
     }
     
     synchronized void produce(char product) {
-        if (this.buffer != 0) {
+
+        if(!this.bufferStorage.isEmpty()){
                try {
                 wait(1000);
             } catch(InterruptedException e) {
@@ -46,8 +42,13 @@ public class Buffer {
             }
         }
         
-        this.buffer = product;
+        this.bufferStorage.add(product);
         
-        notify();
+        notifyAll();
+    }
+    
+    private int getStorageLength() {
+        int storageLength = this.bufferStorage.size();
+        return storageLength;
     }
 }

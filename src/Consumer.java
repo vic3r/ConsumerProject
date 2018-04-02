@@ -8,15 +8,14 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author gabri
- */
+
 public class Consumer extends Thread {
-    Buffer buffer;
+    private Buffer buffer;
+    private int timeInMillis;
     
     Consumer(Buffer buffer) {
         this.buffer = buffer;
+        timeInMillis = 1000;
     }
     
     @Override
@@ -29,10 +28,14 @@ public class Consumer extends Thread {
             System.out.println("Consumer consumed: " + product);
             
             try {
-               Thread.sleep(1000);
+               Thread.sleep(this.timeInMillis);
            } catch(InterruptedException e) {
                 Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, e);
            }
         } 
+    }
+    
+    public void setTime(int timeInMillis) {
+        this.timeInMillis = timeInMillis;
     }
 }
