@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,16 +16,27 @@ import javax.swing.JPanel;
  * and open the template in the editor.
  */
 
-public class ProducerConsumer {
+public final class ProducerConsumer {
     
     private JFrame frame;
     private JPanel panel;
+    
+    //Buttons
     private JButton btProduce;
     private JButton btConsume;
+    private JButton startProducerConsumer;
+    
+    //JLabels
     private JLabel produceLabel;
     private JLabel consumeLabel;
     private JLabel bufferSize;
     private JLabel rangeBufferSize;
+    private JLabel waitingTime;
+    private JLabel bufferQuantity;
+ 
+    //JTextFields
+    private JTextField InputBufferSize;
+    private JTextField InputWaitingTime;
     
     public ProducerConsumer() {
         createComponents();
@@ -39,10 +51,15 @@ public class ProducerConsumer {
         panel = new JPanel();  
         btProduce = new JButton("Producer"); 
         btConsume = new JButton("Consumer");
+        startProducerConsumer = new JButton("Start");
         produceLabel = new JLabel("Producers");
         consumeLabel = new JLabel("Consumers");
         bufferSize = new JLabel("Buffer size");
         rangeBufferSize = new JLabel("Range buffer size");
+        bufferQuantity = new JLabel("Quantity");
+        waitingTime = new JLabel("Waiting Time");
+        InputBufferSize = new JTextField();
+        InputWaitingTime = new JTextField();
     }
     
     public void setComponentsFeatures() {
@@ -54,6 +71,12 @@ public class ProducerConsumer {
         btConsume.setBounds(100,100,80,30);  
         consumeLabel.setBounds(20, 150, 100 , 50);
         btConsume.setBackground(Color.green);
+        bufferSize.setBounds(20, 200, 100, 50);
+        rangeBufferSize.setBounds(20, 250, 100, 50);
+        InputBufferSize.setBounds(120, 200, 100, 50);
+        InputWaitingTime.setBounds(150, 100, 100, 50);
+        startProducerConsumer.setBounds(100, 300, 100, 200);
+        
     }
     
     public void addComponents(){
