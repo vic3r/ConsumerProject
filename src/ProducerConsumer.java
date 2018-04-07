@@ -109,16 +109,4 @@ public final class ProducerConsumer {
         frame.setResizable(false);
     }  
     
-    public static void main(String[] args) {
-        
-        ProducerConsumer produceConsumer = new ProducerConsumer();
-   //     Buffer buffer = new Buffer();
-        
-//        
-//        Producer producer = new Producer(buffer);
-//        producer.start();
-//        
-//        Consumer consumer = new Consumer(buffer);
-//        consumer.start();
-    }
 }
